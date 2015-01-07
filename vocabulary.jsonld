@@ -1,0 +1,91 @@
+{
+  "@context": {
+    "oil": "http://data.iilab.org/ns/oil#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "defines": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "label": "rdfs:label",
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@id"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "seeAlso": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id"
+    }
+  },
+  "@id": "http://data.iilab.org/tmp/ns",
+  "@type": "owl:Ontology",
+  "defines": [
+    {
+      "@id": "oil:Company",
+      "@type": "rdfs:Class",
+      "comment": "company awarding contract or geting share awarded"
+    },
+    {
+      "@id": "oil:Contract",
+      "@type": "rdfs:Class",
+      "comment": "contract between companies"
+    },
+    {
+      "@id": "oil:ContractShare",
+      "@type": "rdfs:Class",
+      "comment": ""
+    },
+    {
+      "@id": "oil:awardedBy",
+      "@type": "rdfs:Property",
+      "comment": "",
+      "domain": "oil:Contract",
+      "range": "oil:Company"
+    },
+    {
+      "@id": "oil:awardedTo",
+      "@type": "rdfs:Property",
+      "comment": "",
+      "domain": "oil:ContractShare",
+      "range": "oil:Company"
+    },
+    {
+      "@id": "oil:hasShare",
+      "@type": "rdfs:Property",
+      "comment": "",
+      "domain": "oil:Contract",
+      "range": "oil:ContractShare",
+      "owl:inverseOf": "oil:shareOf"
+    },
+    {
+      "@id": "oil:shareOf",
+      "@type": "rdfs:Property",
+      "comment": "",
+      "domain": "oil:ContractShare",
+      "range": "oil:Contract",
+      "owl:inverseOf": "oil:hasShare"
+    },
+    {
+      "@id": "oil:percentage",
+      "@type": "rdfs:Property",
+      "comment": "",
+      "domain": "oil:ContractShare",
+      "range": "xsd:decimal"
+    }
+  ]
+}

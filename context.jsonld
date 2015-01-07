@@ -1,0 +1,23 @@
+{
+  "@context": {
+    "schema": "http://schema.org",
+    "corp": "http://data.iilab.org/ns/corp#",
+    "contr": "http://data.iilab.org/ns/contr#",
+    "oil": "http://data.iilab.org/ns/oil#",
+    "misc": "http://data.iilab.org/ns/misc#",
+    "id": "@id",
+    "type": "@type",
+    "Country": "schema:Country",
+    "Company": "corp:Company",
+    "Ownership": "corp:Ownership",
+    "Contract": "contr:Contract",
+    "ContractShare": "contr:ContractShare",
+    "inJurisdiction": "corp:inJurisdiction",
+    "awardedBy": "contr:awardedBy",
+    "hasOwnership": "corp:hasOwnership",
+    "ownedCompany": "corp:ownedCompany",
+    "hasShare": "contr:hasShare",
+    "awardedTo": "contr:awardedTo",
+    "percentage": "misc:percentage"
+  }
+}
